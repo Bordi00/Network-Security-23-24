@@ -31,8 +31,11 @@ Authors:
 
 
 ## Types of attacks
+There are two main types of DoS attacks one is volume based and the other one is resource based. This tow are also known as flood an crash based respectively. The difference between the two is in how they deplete the resources of the target: the first one (flood) tries to take as much resources of the target as possible, the other one (crash) tries to crash the server thus rendering it unreachable through bug or bad implementation of protocols.
 
 ## Network Layer DoS attacks
+The network layer provides the means of transferring variable-length network packets from a source to a destination host via one or more networks. This layer responds to service request from the transport layer and issues service requests to the data link layer. We will analyze the IP protocols and how this non secure protocol can be exploited by a malicious user.
+
 ### IP recap
 ### Ping Flood
 ### Ping of death
