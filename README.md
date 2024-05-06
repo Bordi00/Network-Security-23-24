@@ -6,29 +6,28 @@ Authors:
 > Greta Franchi
 > Alessandro Perez
 
-## Table of Contents:
-- [[#Types of attacks|Types of attacks]]
-- [[#Network Layer DoS attacks|Network Layer DoS attacks]]
-	- [[#Network Layer DoS attacks#IP recap|IP recap]]
-	- [[#Network Layer DoS attacks#Ping Flood|Ping Flood]]
-	- [[#Network Layer DoS attacks#Ping of death|Ping of death]]
-	- [[#Network Layer DoS attacks#Mitigations|Mitigations]]
-- [[#Transport Layer DoS attacks|Transport Layer DoS attacks]]
-	- [[#Transport Layer DoS attacks#TCP recap|TCP recap]]
-	- [[#Transport Layer DoS attacks#SYN flood|SYN flood]]
-	- [[#Transport Layer DoS attacks#Mitigations|Mitigations]]
-- [[#Application Layer attacks|Application Layer attacks]]
-	- [[#Application Layer attacks#HTTP recap|HTTP recap]]
-	- [[#Application Layer attacks#HTTP flood|HTTP flood]]
-	- [[#Application Layer attacks#RUDY attack|RUDY attack]]
-	- [[#Application Layer attacks#Slowloris attack|Slowloris attack]]
-	- [[#Application Layer attacks#Mitigations|Mitigations]]
-- [[#DDoS attacks|DDoS attacks]]
-	- [[#DDoS attacks#DoS vs. DDoS|DoS vs. DDoS]]
-	- [[#DDoS attacks#DNS Amplification attack|DNS Amplification attack]]
-	- [[#DDoS attacks#Mitigations|Mitigations]]
-- [[#References|References]]
-
+## Table of Contents
+- [Types of attacks](#types-of-attacks)
+- [Network Layer DoS attacks](#network-layer-dos-attacks)
+  * [IP recap](#ip-recap)
+  * [Ping Flood](#ping-flood)
+  * [Ping of death](#ping-of-death)
+  * [Mitigations](#mitigations)
+- [Transport Layer DoS attacks](#transport-layer-dos-attacks)
+  * [TCP recap](#tcp-recap)
+  * [SYN flood](#syn-flood)
+  * [Mitigations](#mitigations-1)
+- [Application Layer attacks](#application-layer-attacks)
+  * [HTTP recap](#http-recap)
+  * [HTTP flood](#http-flood)
+  * [RUDY attack](#rudy-attack)
+  * [Slowloris attack](#slowloris-attack)
+  * [Mitigations](#mitigations-2)
+- [DDoS attacks](#ddos-attacks)
+  * [DoS vs. DDoS](#dos-vs-ddos)
+  * [DNS Amplification attack](#dns-amplification-attack)
+  * [Mitigations](#mitigations-3)
+- [References](#references)
 
 
 ## Types of attacks
