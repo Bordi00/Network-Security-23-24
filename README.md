@@ -2,9 +2,9 @@ Laboratory created for the Computer Science Master course of Network Security he
 
 # DoS attacks: a Network Security laboratory
 Authors:
-> Matteo Bordignon @bordi00
-> Greta Franchi @GretaFranchi
-> Alessandro Perez @AlessandroPerez
+> Matteo Bordignon [@bordi00](https://github.com/Bordi00)
+> Greta Franchi [@GretaFranchi](https://github.com/GretaFranchi)
+> Alessandro Perez [@AlessandroPerez](https://github.com/AlessandroPerez)
 
 ## Table of Contents
 - [Types of attacks](#types-of-attacks)
