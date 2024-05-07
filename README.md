@@ -47,14 +47,27 @@ During this lab we will use IPv4 since its the most used at the moment. This pro
 <inserire immagine ip header>
 The total length of the entire packet size including header and data is 65535 bytes and the minimum size is 20 bytes (header without data). Some of the fields important to us are: fragment offset (since the message can be split in different ip packets), protocol (it can be set to ICMP, TCP, UDP and others) and lastly source and destination address.
 
-### Ping Flood 
-Ping flood is a volume based attack where we try to take the hole bandwidth for our self by spamming pings to the victim, this will render the server unreachable to any one else. To do so we will use the hping3 command but first we need to set up the environment.
-
 #### GNS3
-GNS3 is a Graphical Network Simulator created in python and under the GPL license. To start it open a terminal type gns3 and press enter
+GNS3 is a Graphical Network Simulator created in python and under the GPL license. It will be the environment where the lab will happen to start it open a terminal type gns3 and press enter
+
 <inserire immagine terminale con gns3>
-To use our topology select 
+
+To use our topology select, by double clicking, DoS_lab from the project library tab; to start all the machines press the green play button in the top left. Our topology is divided in two LANs one that contains the attacker (the one in yellow) and a second one that contains the victim (light blue). If you want to interact with any of the elements in the topology just right click it and a drop down menu will appear. For example if you want to open a terminal on the kali-machine-1 (the atacker) right click it and select terminal from the menu. During this lab kali-machine-1 will be us, the attacker, and Victim is the target of our attacks.
+
+### Ping Flood
+Ping flood is a volume based attack where we try to take the hole bandwidth for our self by spamming pings to the victim, this will render the server unreachable to any one else. To do so we will use the hping3 on the kali machine using the flag -1 for ICMP and --flood to spamm ping messages. To see the result of our attaks we will first start a ping from PC1 towards the victim with the command:
+
+ping 192.168.100.18 -t
+
+the flag -t here is to continuosly ping the server; if it will ever go down we will see a timeout in the logs. To start the attack we open the shell on the kali machine and use the command:
+
+hping3 -1 --flood 192.168.100.18
+
+once we start the command we can see that the pings from PC1 won't be received from the victim this can also be seen if we click on the connection between the router and the server and open wireshark there. To end the attak just press Ctrl+c on the kali shell and you will see that the pings will be recived by the server once again.
+
 ### Ping of death
+
+
 ### Mitigations
 
 ## Transport Layer DoS attacks
