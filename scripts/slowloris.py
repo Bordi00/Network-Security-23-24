@@ -59,7 +59,6 @@ def attack(ip, port):
                 print("\nExiting...")
                 break
         except Exception as e:
-            #print("Error:", e)
             continue
 
 

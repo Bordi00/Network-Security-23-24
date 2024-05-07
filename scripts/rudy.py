@@ -63,9 +63,11 @@ def attack(ip, port):
 
             http_conn.close()
         except KeyboardInterrupt:
-                stop = True
-                print("\nExiting...")
-                sys.exit(0)
+            stop = True
+            print("\nExiting...")
+            sys.exit(0)
+        except Exception as e:
+            pass
 
 
 def main():
@@ -84,12 +86,8 @@ def main():
         all_threads.append(t)
         time.sleep(0.01)
     for t in all_threads:
-    	try:
-        	t.join()
-        except KeyboardInterrupt:
-        	print("Attack ended")
+    	t.join()
         
-        	sys.exit(0)
 
 
 if __name__ == "__main__":

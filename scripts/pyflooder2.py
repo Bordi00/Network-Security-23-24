@@ -29,7 +29,7 @@ def attack(ip, port):
         #insert your code
         
         
-        # forge http header
+        # forge http request
         # insert your code
         
         
