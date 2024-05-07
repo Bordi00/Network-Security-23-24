@@ -50,7 +50,7 @@ The total length of the entire packet size including header and data is 65535 by
 #### GNS3
 GNS3 is a Graphical Network Simulator created in python and under the GPL license. It will be the environment where the lab will happen to start it open a terminal type gns3 and press enter
 
-<inserire immagine terminale con gns3>
+`gns3`
 
 To use our topology select, by double clicking, DoS_lab from the project library tab; to start all the machines press the green play button in the top left. Our topology is divided in two LANs one that contains the attacker (the one in yellow) and a second one that contains the victim (light blue). If you want to interact with any of the elements in the topology just right click it and a drop down menu will appear. For example if you want to open a terminal on the kali-machine-1 (the atacker) right click it and select terminal from the menu. During this lab kali-machine-1 will be us, the attacker, and Victim is the target of our attacks.
 
