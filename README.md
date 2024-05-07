@@ -41,7 +41,7 @@ The network layer provides the means of transferring variable-length network pac
 ### IP recap
 During this lab we will use IPv4 since its the most used at the moment. This protocol is described in RFC 791 [2](#references) and the year after it became the standard of the Internet Protocol Suite (TCP/IP). The header consists of 14 fields, of which 13 are required.
 
-![[images/ipPacket.png]]
+![alt text](https://github.com/Bordi00/Network-Security-23-24/blob/main/images/ipPacket.png)
 
 The total length of the entire packet size including header and data is 65535 bytes and the minimum size is 20 bytes (header without data). Some of the fields important to us are: fragment offset (since the message can be split in different ip packets), protocol (it can be set to ICMP, TCP, UDP and others) and lastly source and destination address.
 
@@ -95,7 +95,7 @@ These attacks target the transport layer (layer 4) of the OSI model, with the go
 Transmission Control Protocol (TCP) is a foundational communication protocol within computer networks, ensuring reliable data transmission between devices. It operates at the transport layer of the OSI model, facilitating the establishment, maintenance, and termination of connections. TCP guarantees that data packets sent from one system to another arrive intact and in the correct order by implementing mechanisms such as sequencing, acknowledgment, and retransmission of lost data. It provides a connection-oriented, full-duplex communication channel, supporting applications like web browsing, email, file transfer, and more. TCP is a fundamental component of the TCP/IP protocol suite, which underpins the internet and many other networks.
 The TCP is described by the RFC-793 [5](#references). A TCP header is composed as shown it the image below:
 
-![[tcp_header.png]]
+![alt text](https://github.com/Bordi00/Network-Security-23-24/blob/main/images/tcp_header.png)
 
 The relevant fields to us are:
 - **Source and destination ports**: identifies the sending and receiving applications on the source and destination devices, respectively.
@@ -107,7 +107,7 @@ SYN flood [6](#references) attacks work by exploiting the handshake process of a
 2. The server then responds to that initial packet with a SYN/ACK packet, in order to acknowledge the communication.
 3. Finally, the client returns an ACK packet to acknowledge the receipt of the packet from the server. After completing this sequence of packet sending and receiving, the TCP connection is open and able to send and receive data.
 
-![[three-way-handshake.jpg]]
+![alt-text](https://github.com/Bordi00/Network-Security-23-24/blob/main/images/three-way-handshake.jpg)
 
 To create denial-of-service, an attacker exploits the fact that after an initial SYN packet has been received, the server will respond back with one or more SYN/ACK packets and wait for the final step in the handshake. Here’s how it works:
 
@@ -115,7 +115,7 @@ To create denial-of-service, an attacker exploits the fact that after an initia
 2. The server then responds to each one of the connection requests and leaves an open port ready to receive the response.
 3. While the server waits for the final ACK packet, which never arrives, the attacker continues to send more SYN packets. The arrival of each new SYN packet causes the server to temporarily maintain a new open port connection for a certain length of time, and once all the available ports have been utilized the server is unable to function normally.
 
-![[SYN-flood.png]]
+!alt-text](https://github.com/Bordi00/Network-Security-23-24/blob/main/images/SYN-flood.png)
 
 Now let us put into practice what we have just learnt: on GNS3, first open a terminal instance on PC1 and type `ping 192.168.100.18 -t` to check if you can reach the target, then open the Kali-machine terminal and edit the file named `syn_flood.py` using either vim or nano. Edit the script completing the functions. You can use the `RandShort()` function to generate random source ports. Once the script is ready, run it using `python3 syn_flood.py` and check the log on PC1 terminal. You should see that the destination doesn't respond to our echo request and ping command should return us a `request timeout`.
 
@@ -177,7 +177,7 @@ On the other hand, a DDoS (Distributed Denial of Service) attack involves multip
 ### DNS Amplification attack
 This DDoS attack [9](#references) is a reflection-based volumetric distributed denial-of-service (DDoS) attack in which an attacker leverages the functionality of open DNS resolvers in order to overwhelm a target server or network with an amplified amount of traffic, rendering the server and its surrounding infrastructure inaccessible.
 
-![[Learning_Center_DDoS_Diagrams_clean.webp]]
+![alt-text](https://github.com/Bordi00/Network-Security-23-24/blob/main/images/Learning_Center_DDoS_Diagrams_clean.webp)
 
 A DNS amplification can be broken down into four steps:
 
