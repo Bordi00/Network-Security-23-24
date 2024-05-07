@@ -31,7 +31,13 @@ Authors:
 
 
 ## Types of attacks
-There are two main types of DoS attacks one is volume based and the other one is resource based. This tow are also known as flood an crash based respectively. The difference between the two is in how they deplete the resources of the target: the first one (flood) tries to take as much resources of the target as possible, the other one (crash) tries to crash the server thus rendering it unreachable through bug or bad implementation of protocols.
+A Denial-of-Service (DoS) attack [1](#references) is an attack meant to shut down a machine or network, making it inaccessible to its intended users. DoS attacks accomplish this by flooding the target with traffic, or sending it information that triggers a crash.
+There are two main types of DoS attacks:
+
+- Bandwidth-based (volumetric): attacks which aim to consume the bandwidth of the target (e.g.: ICMP flood, HTTP flood, DNS amplification, etc.) 
+- Resource-based: attacks which aim to consume all the target resources such as buffer, memory, cpu execution cap. In this type are divide into:
+  - Application Layer: these attacks target vulnerabilities in the application layer of a system. Instead of overwhelming the network with traffic, they exploit the application’s weaknesses to consume server resources or cause it to crash (e.g. Slowloris, HTTP Slow Post)
+  - Protocol exploitation: these attacks exploit flaws in the network protocols to overload the target (e.g.: ping of death, SYN flood)
 
 ## Network Layer DoS attacks
 The network layer provides the means of transferring variable-length network packets from a source to a destination host via one or more networks. This layer responds to service request from the transport layer and issues service requests to the data link layer. We will analyze the IP protocols and how this non secure protocol can be exploited by a malicious user.
@@ -67,11 +73,5 @@ The network layer provides the means of transferring variable-length network pac
 
 ### Mitigations
 
-
-
-
-
-
-
-
 ## References
+1. [What is a denial of service attack (DoS) ?](https://www.paloaltonetworks.com/cyberpedia/what-is-a-denial-of-service-attack-dos)
