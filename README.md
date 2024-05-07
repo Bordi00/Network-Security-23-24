@@ -63,7 +63,7 @@ the flag -t here is to continuosly ping the server; if it will ever go down we w
 
 `hping3 -1 --flood 192.168.100.18`
 
-once we start the command we can see that the pings from PC1 won't be received from the victim this can also be seen if we click on the connection between the router and the server and open wireshark there. To end the attak just press Ctrl+c on the kali shell and you will see that the pings will be recived by the server once again.
+once we start the command we can see that the pings from PC1 won't be received from the victim this can also be seen if we click on the connection between the router and the server and open wireshark there. To make this attack less detectable we can add the flag --rand-source To end the attak just press Ctrl+c on the kali shell and you will see that the pings will be recived by the server once again.
 
 ### Ping of death
 Ping of death is a resource based attack with the goal to crash a server due to it allocating too little space for the recived package. As already mantion the maximun leangth of a ping is 65535 with 20 used by the header but in many older versions of OSs the allocated space is way less (e.g. one datagram which is 1500 bytes); this oversite was repeated even in IPv6. For our exercise open the terminal on kali-machine-1 and edit the unfinished version of ping_of_death.py with either vim or nano. One possible solution is:
@@ -83,6 +83,13 @@ To check if the scrip is correct lounch it with the command
 and see if the ping from the PC1 don't reach the victim
 
 ### Mitigations
+The mitigation very from more to less extreme and are:
+- Not allow ping at all
+- Have Access Control Lists
+  - They can check if the same IP is tring to send too many packeges
+  - They can see if the IP is well formed
+- Use firewalls
+  - It can see if the content of the ping is larger than expected 
 
 ## Transport Layer DoS attacks
 ### TCP recap
