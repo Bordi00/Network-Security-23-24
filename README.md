@@ -115,7 +115,7 @@ To create denial-of-service, an attacker exploits the fact that after an initia
 2. The server then responds to each one of the connection requests and leaves an open port ready to receive the response.
 3. While the server waits for the final ACK packet, which never arrives, the attacker continues to send more SYN packets. The arrival of each new SYN packet causes the server to temporarily maintain a new open port connection for a certain length of time, and once all the available ports have been utilized the server is unable to function normally.
 
-!alt-text](https://github.com/Bordi00/Network-Security-23-24/blob/main/images/SYN-flood.png)
+![alt-text](https://github.com/Bordi00/Network-Security-23-24/blob/main/images/SYN-flood.png)
 
 Now let us put into practice what we have just learnt: on GNS3, first open a terminal instance on PC1 and type `ping 192.168.100.18 -t` to check if you can reach the target, then open the Kali-machine terminal and edit the file named `syn_flood.py` using either vim or nano. Edit the script completing the functions. You can use the `RandShort()` function to generate random source ports. Once the script is ready, run it using `python3 syn_flood.py` and check the log on PC1 terminal. You should see that the destination doesn't respond to our echo request and ping command should return us a `request timeout`.
 
