@@ -59,6 +59,9 @@ To use our topology select
 
 ## Transport Layer DoS attacks
 ### TCP recap
+The transport layer [2](#references) ensures reliable, error-free delivery of data between end systems, such as computers or servers. It also provides mechanisms for error detection, flow control, and congestion avoidance and manages the transmission of messages from layers 1 through 3.
+
+These attacks target the transport layer (layer 4) of the OSI model, with the goal of overloading the target’s servers or network devices. Transport layer DDoS attacks include SYN (synchronization) floods, TCP (Transmission Control Protocol) floods, and UDP (User Datagram Protocol) floods. Transport layer attacks can result in the limiting of reach bandwidth or connections of hosts or networking equipment.
 
 ### SYN flood 
 
@@ -85,3 +88,4 @@ To use our topology select
 
 ## References
 1. [What is a denial of service attack (DoS) ?](https://www.paloaltonetworks.com/cyberpedia/what-is-a-denial-of-service-attack-dos)
+2. [Transport Layer DoS attacks](https://www.cdnetworks.com/cloud-security-blog/types-of-ddos-attacks/#:~:text=Transport%20Layer%20DDoS%20attacks&text=These%20attacks%20target%20the%20transport,(User%20Datagram%20Protocol)%20floods.)
