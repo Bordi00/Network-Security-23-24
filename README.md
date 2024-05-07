@@ -37,7 +37,11 @@ There are two main types of DoS attacks one is volume based and the other one is
 The network layer provides the means of transferring variable-length network packets from a source to a destination host via one or more networks. This layer responds to service request from the transport layer and issues service requests to the data link layer. We will analyze the IP protocols and how this non secure protocol can be exploited by a malicious user.
 
 ### IP recap
-### Ping Flood
+During this lab we will use IPv4 since its the most used at the moment. This protocol is described in RFC 791 and the year after it became the standard of the Internet Protocol Suite (TCP/IP). The header consists of 14 fields, of which 13 are required.
+<inserire immagine ip header>
+The total length of the entire packet size including header and data is 65535 bytes and the minimum size is 20 bytes (header without data). Some of the fields important to us are: fragment offset (since the message can be split in different ip packets), protocol (it can be set to ICMP, TCP, UDP and others) and lastly source and destination address.
+
+### Ping Flood 
 ### Ping of death
 ### Mitigations
 
