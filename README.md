@@ -174,6 +174,8 @@ Key components of an HTTP request, which ensure proper communication between cli
 - **Headers**: metadata about the message being transmitted. Since the adoption of HTTP/1.1. [13](#references) the only mandatory header is the Host Header, which specifies the domain name server of the receiving server.
 - **Blank line**: the protocol require a blank line between the headers and the body of the request, highlighting the beginning of the latter section.
 
+![alt-text](https://github.com/Bordi00/Network-Security-23-24/blob/main/images/http_request.jpg)
+
 ### HTTP flood
 The most common type of HTTP-based DoS attack is the flood [14](#references) [15](#references).
 
