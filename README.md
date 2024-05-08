@@ -171,11 +171,11 @@ The HTTP (HyperText Transfer Protocol) is a protocol used for transmitting web p
 Key components of an HTTP request, which ensure proper communication between client and server, include:
 
 - **Request line**: the first line of any HTTP request contains the method (e.g., GET, POST), the URL of the resource present in the server, and the HTTP version.
-- **Headers**: metadata about the message being transmitted. Since the adoption of HTTP/1.1. the only mandatory header is the Host Header, which specifies the domain name server of the receiving server.
+- **Headers**: metadata about the message being transmitted. Since the adoption of HTTP/1.1. [13](#references) the only mandatory header is the Host Header, which specifies the domain name server of the receiving server.
 - **Blank line**: the protocol require a blank line between the headers and the body of the request, highlighting the beginning of the latter section.
 
 ### HTTP flood
-The most common type of HTTP-based DoS attack is the flood.
+The most common type of HTTP-based DoS attack is the flood [14](#references) [15](#references).
 
 It is a volumetric attack designed to overwhelm a targeted server with technically correctly formulated HTTP requests. Once the target has been saturated and is unable to respond to normal traffic, denial-of-service will occur for additional requests from actual users.
 
@@ -215,7 +215,7 @@ def attack(ip, port):
 After completing the script, it can be launched using the `python3 pyflooder2.py`, and its effectiveness can be checked from PC1 by trying to ping the victim server.
 
 ### Slowloris attack
-Slowloris is a type of attack that allows a single machine to incapacitate a web server with minimal bandwidth, so it falls into the resource-based DoS category.
+Slowloris [16](#references) [17](#references) is a type of attack that allows a single machine to incapacitate a web server with minimal bandwidth, so it falls into the resource-based DoS category.
 
 It operates on the principle of opening multiple HTTP connections to the target server and maintaining them open as long as possible. This is done by sending incomplete HTTP requests where headers are send periodically at a slow pace. Since the server cannot reach the blank line signaling the end of the headers section, it’s unable to close any connections because awaiting completion of the request. As the server’s thread pool reaches capacity, it becomes incapable of servicing additional requests, leading to a denial-of-service scenario for legitimate traffic.
 
@@ -261,7 +261,7 @@ def attack(ip, port):
 After completing the script, it can be launched using the `python3 slowloris.py`, and its effectiveness can be checked from PC1 by trying to ping the victim server.
 
 ### RUDY attack
-RUDY (R U Dead Yet?) is a type of DoS attack that disrupt web servers by submitting data at an extremely slow rate. For this reason it is also called slow POST attack, and it falls into the resource-based DoS category.
+RUDY (R U Dead Yet?) [18](#references) [19](#references) is a type of DoS attack that disrupt web servers by submitting data at an extremely slow rate. For this reason it is also called slow POST attack, and it falls into the resource-based DoS category.
 
 RUDY initiates an HTTP POST request that appears legitimate, complete with the Content-Length header indicating that a very long content submission in forthcoming. The body dispatch of the HTTP request is deliberately prolonged by breaking the data into tiny packets, as small as 1 byte, and sending these to the server at very slow rate.
 
@@ -452,3 +452,10 @@ For an individual or company running a website or service, mitigation options ar
 10. [DNS amp mitigation](https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/)
 11. [Blackhole traffic](https://www.cloudflare.com/learning/ddos/glossary/ddos-blackhole-routing/)
 12. [CISA DNS amp mitigation](https://www.cisa.gov/news-events/alerts/2013/03/29/dns-amplification-attacks)
+13. [HTTP/1.1: RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616)
+14. [HTTP flood](https://www.cloudflare.com/it-it/learning/ddos/http-flood-ddos-attack/)
+15. [HTTP flood](https://www.myrasecurity.com/en/knowledge-hub/http-flood-attack/)
+16. [Slowloris attack](https://www.cloudflare.com/it-it/learning/ddos/ddos-attack-tools/slowloris/)
+17. [Slowloris attack](https://www.invicti.com/learn/slowloris-attack/)
+18. [Rudy attack](https://www.cloudflare.com/it-it/learning/ddos/ddos-attack-tools/r-u-dead-yet-rudy/)
+19. [Rudy attack](https://www.invicti.com/learn/rudy-attack/)
