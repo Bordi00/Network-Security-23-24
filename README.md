@@ -161,7 +161,7 @@ The application layer, situated at layer 7 of the OSI model, encompasses the pro
 
 To effectively prepare for and execute an application layer DoS attack, an attacker should conduct port scanning to identify which ports are accessible on the server. The following command can be used.
 
-`hping3 -S —scan 1-500 [server_ip] | grep -v ‘Not res’`
+`hping3 -S --scan 1-500 [server_ip] | grep -v ‘Not res’`
 
 During the laboratory activity this preliminary step reveals that only port 80 is open, allowing us to focus on HTTP DoS attacks. This approach ensures that our efforts are directed precisely where the server is vulnerable, making the attack more likely to succeed in disrupting the intended service.
 
