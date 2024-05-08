@@ -159,7 +159,7 @@ There are tons of way to prevent this attack today. Some of them are:
 ## Application Layer DoS attacks
 The application layer, situated at layer 7 of the OSI model, encompasses the protocols and methods that allow software applications to communicate over a network. Within this layer, attackers can exploit vulnerabilities to deny access to these services, rendering them unavailable to legitimate users.
 
-To effectively prepare for and execute an application layer DoS attack, an attacker should conduct port scanning to identify which ports are accessible on the server.
+To effectively prepare for and execute an application layer DoS attack, an attacker should conduct port scanning to identify which ports are accessible on the server. The following command can be used.
 
 `hping3 -S —scan 1-500 [server_ip] | grep -v ‘Not res’`
 
@@ -182,7 +182,7 @@ It is a volumetric attack designed to overwhelm a targeted server with technical
 There are two varieties of HTTP flood attacks, based on the HTTP method used in the requests.
 
 In this laboratory we perform HTTP GET flood attack.
-A python script (`pyflooder2.py`) is provided in order to demonstrate it can be performed.
+A python script (`pyflooder2.py`) is provided in order to demonstrate how it can be performed.
 
 The script is composed of two main functions.
 The `main()` function takes the target IP and the number of requests from the users and initiates the wanted amount of threads, each executing the attack function.
@@ -212,7 +212,7 @@ def attack(ip, port):
         http_conn.close()
 ```
 
-After completing the script, it can be launched using the `python3 pyflooder2.py`, and its effectiveness can be checked from PC1 by trying to ping the victim server.
+After completing the script, it can be launched using `python3 pyflooder2.py`, and its effectiveness can be checked from PC1 by trying to ping the victim server.
 
 ### Slowloris attack
 Slowloris [16](#references) [17](#references) is a type of attack that allows a single machine to incapacitate a web server with minimal bandwidth, so it falls into the resource-based DoS category.
@@ -258,14 +258,14 @@ def attack(ip, port):
             continue
 ```
 
-After completing the script, it can be launched using the `python3 slowloris.py`, and its effectiveness can be checked from PC1 by trying to ping the victim server.
+After completing the script, it can be launched using `python3 slowloris.py`, and its effectiveness can be checked from PC1 by trying to ping the victim server.
 
 ### RUDY attack
 RUDY (R U Dead Yet?) [18](#references) [19](#references) is a type of DoS attack that disrupt web servers by submitting data at an extremely slow rate. For this reason it is also called slow POST attack, and it falls into the resource-based DoS category.
 
 RUDY initiates an HTTP POST request that appears legitimate, complete with the Content-Length header indicating that a very long content submission in forthcoming. The body dispatch of the HTTP request is deliberately prolonged by breaking the data into tiny packets, as small as 1 byte, and sending these to the server at very slow rate.
 
-When multiple instances of RUDY direct such traffic at a single server, the server’s connection table or other server resources such as memory or CPU may be exhausted. If the attack succeeds, the server can no longer handle legitimate traffic.d
+When multiple instances of RUDY direct such traffic at a single server, the server’s connection table or other server resources such as memory or CPU may be exhausted. If the attack succeeds, the server can no longer handle legitimate traffic.
 
 For a clearer comprehension of RUDY attack, `rudy.py` is provided. 
 
@@ -309,7 +309,7 @@ def attack(ip, port):
             continue
 ```
 
-After completing the script, it can be launched using the `python3 rudy.py`, and its effectiveness can be checked from PC1 by trying to ping the victim server.
+After completing the script, it can be launched using `python3 rudy.py`, and its effectiveness can be checked from PC1 by trying to ping the victim server.
 
 ### Mitigations
 Several mitigations for HTTP DoS attacks exist.
