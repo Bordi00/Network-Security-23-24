@@ -17,7 +17,7 @@ Authors:
   * [TCP recap](#tcp-recap)
   * [SYN flood](#syn-flood)
   * [Mitigations](#mitigations-1)
-- [Application Layer attacks](#application-layer-attacks)
+- [Application Layer DoS attacks](#application-layer-attacks)
   * [HTTP recap](#http-recap)
   * [HTTP flood](#http-flood)
   * [Slowloris attack](#slowloris-attack)
