@@ -181,7 +181,7 @@ The most common type of HTTP-based DoS attack is the flood [14](#references) [15
 
 It is a volumetric attack designed to overwhelm a targeted server with technically correctly formulated HTTP requests. Once the target has been saturated and is unable to respond to normal traffic, denial-of-service will occur for additional requests from actual users.
 
-There are two varieties of HTTP flood attacks, based on the HTTP method used in the requests.
+There are two varieties of HTTP flood attacks, based on the HTTP method used in the requests: HTTP GET flood and HTTP POST flood.
 
 In this laboratory we perform HTTP GET flood attack.
 A python script (`pyflooder2.py`) is provided in order to demonstrate how it can be performed.
