@@ -35,11 +35,14 @@ We suggest you to install [GNS3](https://gns3.com/) on your local machine and ru
 To do so follow these steps:
 - Install GNS3 using the [installation guide](https://docs.gns3.com/docs/)
 - open the terminal and type:
-  `git clone https://github.com/Bordi00/Network-Security-23-24`
-  
-  `cd Network-Security-23-24`
+  ```bash
+  git clone https://github.com/Bordi00/Network-Security-23-24
+  cd Network-Security-23-24
+  ```
 - build the dockerfile:
-  `docker build -t dockerfile .`
+  ```bash
+  docker build -t dockerfile .
+  ```
 - open GNS3 and close the "new project" window
 - then file>import portable project>select the gns3 project file from the repository that you just cloned
 - Now you are ready to play with it, have fun!
