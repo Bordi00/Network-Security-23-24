@@ -28,6 +28,22 @@ Authors:
   * [DNS Amplification attack](#dns-amplification-attack)
   * [Mitigations](#mitigations-3)
 - [References](#references)
+
+## Setup the Lab
+We suggest you to install [GNS3](https://gns3.com/) on your local machine and run the laboratory on your own machine.
+To do so follow these steps:
+- Install GNS3 using the [installation guide](https://docs.gns3.com/docs/)
+- open the terminal and type:
+  `git clone https://github.com/Bordi00/Network-Security-23-24`
+  `cd Network-Security-23-24`
+- build the dockerfile:
+  `docker build -t dockerfile .`
+- open GNS3 and close the "new project" window
+- then file>import portable project>select the gns3 project file from the repository that you just cloned
+- Now you are ready to play with it, have fun!
+
+for the DDoS part of the lab you need to follow the setup instruction on the repository of the exercise creator [@Avielyo10](https://github.com/Avielyo10/DNS-Amplification-Lab?tab=readme-ov-file) 
+
 ## Types of attacks
 A Denial-of-Service (DoS) attack [1](#references) is an attack meant to shut down a machine or network, making it inaccessible to its intended users. DoS attacks accomplish this by flooding the target with traffic, or sending it information that triggers a crash.
 There are two main types of DoS attacks:
@@ -345,7 +361,7 @@ While a few requests is not enough to take down network infrastructure, when thi
 
 To implement this attack we will use the github repo created by [@Avielyo10](https://github.com/Avielyo10/DNS-Amplification-Lab?tab=readme-ov-file) 
 
-On the provided Lubuntu VM create Docker network: `docker network create Lab`.
+On the provided Lubuntu VM (if you are a UniTN student) or in you local machine create Docker network: `docker network create Lab`.
 
 Run and connect to Sniff:
 
