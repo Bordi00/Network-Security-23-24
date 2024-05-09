@@ -7,6 +7,7 @@ Authors:
 > Alessandro Perez [@AlessandroPerez](https://github.com/AlessandroPerez)
 
 ## Table of Contents
+- [Lab Setup](#setup-the-lab)
 - [Types of attacks](#types-of-attacks)
 - [Network Layer DoS attacks](#network-layer-dos-attacks)
   * [IP recap](#ip-recap)
@@ -35,6 +36,7 @@ To do so follow these steps:
 - Install GNS3 using the [installation guide](https://docs.gns3.com/docs/)
 - open the terminal and type:
   `git clone https://github.com/Bordi00/Network-Security-23-24`
+  
   `cd Network-Security-23-24`
 - build the dockerfile:
   `docker build -t dockerfile .`
