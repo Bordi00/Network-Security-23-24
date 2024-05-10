@@ -274,9 +274,9 @@ def attack(ip, port):
                 time.sleep(random.uniform(0.1, 3))
             http_conn.close()
         except KeyboardInterrupt:
-                stop = True
-                print("\nExiting...")
-                break
+	    stop = True
+	    print("\nExiting...")
+            break
         except Exception as e:
             continue
 ```
@@ -325,9 +325,9 @@ def attack(ip, port):
                 time.sleep(random.uniform(0.1, 3))
             http_conn.close()
         except KeyboardInterrupt:
-                stop = True
-                print("\nExiting...")
-                break
+	    stop = True
+	    print("\nExiting...")
+	    break
         except Exception as e:
             continue
 ```
