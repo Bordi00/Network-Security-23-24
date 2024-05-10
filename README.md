@@ -54,7 +54,7 @@ A Denial-of-Service (DoS) attack [1](#references) is an attack meant to shut dow
 There are two main types of DoS attacks:
 
 - Bandwidth-based (volumetric): attacks which aim to consume the bandwidth of the target (e.g.: ICMP flood, HTTP flood, DNS amplification, etc.) 
-- Resource-based: attacks which aim to consume all the target resources such as buffer, memory, cpu execution cap. In this type are divide into:
+- Resource-based: attacks which aim to consume all the target resources such as buffer, memory, cpu execution cap. Within this category we can identify two subgroups:
   - Application Layer: these attacks target vulnerabilities in the application layer of a system. Instead of overwhelming the network with traffic, they exploit the application’s weaknesses to consume server resources or cause it to crash (e.g. Slowloris, HTTP Slow Post)
   - Protocol exploitation: these attacks exploit flaws in the network protocols to overload the target (e.g.: ping of death, SYN flood)
 ## Network Layer DoS attacks
