@@ -41,7 +41,7 @@ To do so follow these steps:
   ```
 - build the dockerfile:
   ```bash
-  docker build -t Dockerfile .
+  docker build -t dockerfile .
   ```
 - open GNS3 and close the "new project" window
 - then file>import portable project>select the gns3 project file from the repository that you just cloned
