@@ -151,7 +151,7 @@ target_port = 80 # insert target port
 # forge IP packet with target ip as the destination IP address
 ip = IP(dst=target_ip)
 # to spoof the source IP you could use:
-# ip = IP(dst=RandIP())
+# ip = IP(src=RandIP())
 
 # forge TCP SYN packet with a random source port
 # and the target port as destination port
